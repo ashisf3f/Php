@@ -10,7 +10,7 @@
 <body>
 
 
-<!-- component -->
+
 <div
 	class="bg-purple-900 absolute top-0 left-0 bg-gradient-to-b from-gray-900 via-gray-900 to-purple-800 bottom-0 leading-5 h-full w-full overflow-hidden">
 	
@@ -32,14 +32,15 @@
 				<p class="text-gray-400">Don'thave an account? <a href="../school/signup.php"
 						class="text-sm text-purple-700 hover:text-purple-700">Sign Up</a></p>
 			</div>
+            <form action="actions/login.php" method="POST">
 			<div class="space-y-6">
 				<div class="">
-					<input class=" w-full text-sm text-gray-600  px-4 py-3 bg-gray-200 focus:bg-gray-100 border  border-gray-200 rounded-lg focus:outline-none focus:border-purple-400" type="" placeholder="Email">
+					<input class=" w-full text-sm text-gray-600  px-4 py-3 bg-gray-200 focus:bg-gray-100 border  border-gray-200 rounded-lg focus:outline-none focus:border-purple-400" type="email" name="email" placeholder="Email" required>
               </div>
 
 
 					<div class="relative" x-data="{ show: true }">
-						<input placeholder="Password" :type="show ? 'password' : 'text'" class="text-sm text-gray-600 px-4 py-3 rounded-lg w-full bg-gray-200 focus:bg-gray-100 border border-gray-200 focus:outline-none focus:border-purple-400">
+						<input name="password" placeholder="Password" :type="show ? 'password' : 'text'" class="text-sm text-gray-600 px-4 py-3 rounded-lg w-full bg-gray-200 focus:bg-gray-100 border border-gray-200 focus:outline-none focus:border-purple-400" required>
 						<div class="flex items-center absolute inset-y-0 right-0 mr-3  text-sm leading-5">
 
 							<svg @click="show = !show" :class="{'hidden': !show, 'block':show }"
@@ -65,15 +66,14 @@
 					<div class="flex items-center justify-between">
 
 						<div class="text-sm ml-auto">
-							<a href="#" class="text-purple-700 hover:text-purple-600">
-								Forgot your password?
-							</a>
+					
 						</div>
 					</div>
 					<div>
 						<button type="submit" class="w-full flex justify-center bg-purple-800  hover:bg-purple-700 text-gray-100 p-3  rounded-lg tracking-wide font-semibold  cursor-pointer transition ease-in duration-500">
                 Sign in
               </button>
+</form>
 					</div>
 			 
 
