@@ -25,12 +25,11 @@
 				and publishing industries for previewing layouts and visual mockups</p>
 		</div>
 	</div>
-	<div class="flex justify-center self-center  z-10">
+	<div class="flex justify-center self-center mt-10 z-10">
 		<div class="p-12 bg-white mx-auto rounded-3xl w-96 ">
 			<div class="mb-7">
-				<h3 class="font-semibold text-2xl text-gray-800">Sign In </h3>
-				<p class="text-gray-400">Don'thave an account? <a href="../school/signup.php"
-						class="text-sm text-purple-700 hover:text-purple-700">Sign Up</a></p>
+				<h3 class="font-semibold text-center mb-3 text-2xl text-gray-800">Sign In </h3>
+				
 			</div>
             <form action="actions/login.php" method="POST">
 			<div class="space-y-6">
@@ -65,14 +64,15 @@
 
 					<div class="flex items-center justify-between">
 
-						<div class="text-sm ml-auto">
-					
 						</div>
-					</div>
-					<div>
-						<button type="submit" class="w-full flex justify-center bg-purple-800  hover:bg-purple-700 text-gray-100 p-3  rounded-lg tracking-wide font-semibold  cursor-pointer transition ease-in duration-500">
-                Sign in
-              </button>
+						<div>
+							<button type="submit" class="w-full flex justify-center bg-purple-800  hover:bg-purple-700 text-gray-100 p-3  rounded-lg tracking-wide font-semibold  cursor-pointer transition ease-in duration-500">
+								Sign in
+							</button>
+							<div class="text-sm mt-4 text-right mx-3 ml-auto">
+							<p class="text-gray-400">Don'thave an account? <a href="../school/signup.php"
+							class="text-sm text-purple-700 hover:text-purple-700">Sign Up</a></p>
+							</div>
 </form>
 					</div>
 			 
@@ -80,21 +80,15 @@
 				</div>
 				<div class="mt-7 text-center text-purple-500 text-xs">
 					<span class="cursor-default">
-                Copyright © 
-                <a href="https://ashiskunwar.com.np" rel="" target="_blank" title="ASK" class="text-purple-500 hover:text-purple-600 ">ASK UPDATE</a></span>
+                Copyright © 2022
+
+                <a href="https://ashiskunwar.com.np" rel="" target="_blank" title="ASK" class="text-purple-500 underline hover:text-purple-600 ">ASK UPDATE</a></span>
 				</div>
 			</div>
 		</div>
 	</div>
 	</div>
-	<!-- <footer class="bg-transparent absolute w-full bottom-0 left-0 z-30">
-	<div class="container p-5 mx-auto  flex items-center justify-between ">
-		<div class="flex mr-auto">
-			<a href="https://codepen.io/uidesignhub" target="_blank" title="codepen aji" class="text-center text-gray-700 focus:outline-none"><img src="/storage/avatars/njkIbPhyZCftc4g9XbMWwVsa7aGVPajYLRXhEeoo.jpg" alt="aji" class="object-cover mx-auto w-8 h-8 rounded-full w-10 h-10"><p class="text-xl">aji<strong>mon</strong></p> </a>
-		</div>
 
-	</div>
-	</footer> -->
 
 <svg class="absolute bottom-0 left-0 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,0L40,42.7C80,85,160,171,240,197.3C320,224,400,192,480,154.7C560,117,640,75,720,74.7C800,75,880,117,960,154.7C1040,192,1120,224,1200,213.3C1280,203,1360,149,1400,122.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js"></script>

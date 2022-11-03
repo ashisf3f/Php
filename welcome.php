@@ -12,10 +12,11 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>ASK - just the thing makes you incredible</title>
 </head>
 <style>
-    @media (prefers-color-scheme: dark) {
+    /* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
@@ -23,7 +24,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
     color: white;
     background: black;
   }
-}
+} */
     html{
         scroll-behavior: smooth;
     }
@@ -34,7 +35,6 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
     // echo  $_SESSION['email']
     require 'components/navbar.php';
     require 'components/home.php';
-    require 'components/service.php';
     ?>
 
 </body>

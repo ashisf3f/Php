@@ -5,10 +5,20 @@ require '../databaseCon/db.inc.php';
 $full_name = $_POST['fullname'];
 $user_email = $_POST['email'];
 $phone = $_POST['phone'];
-$passwrod = $_POST['password'];
+$password1 = $_POST['password'];
 $conf_password  = $_POST['confirm_password'];
 
+//  hash [passwored]
+// $hash = hash('sha256', $password1);
 
+// function createSalt()
+// {
+//     $text = md5(uniqid(rand(), TRUE));
+//     return substr($text, 0, 3);
+// }
+
+// $salt = createSalt();
+// $password = hash('sha256', $salt . $hash);
 
 // phone no validate
 if(!is_numeric($phone)){
@@ -22,7 +32,7 @@ if (!filter_var($user_email, FILTER_VALIDATE_EMAIL)) {
     exit();
 }
 // password validation
-if(strlen($passwrod) < 6){
+if(strlen($password1) < 6){
     header('Location: ../signup.php?error=invalid password-length');
     exit();
 }
@@ -41,8 +51,9 @@ if($numExistRow > 0){
 else{
   $exists = false;
 // passowrd verification
-if($passwrod == $conf_password){
-  $sql = "INSERT INTO `data_info`(`Full_Name`, `Phone_No`, `Email`, `Password`) VALUES ('$full_name','$phone','$user_email','$passwrod')";
+if($password1 == $conf_password){
+  $password = password_hash($password1 , PASSWORD_DEFAULT);
+  $sql = "INSERT INTO `data_info`(`Full_Name`, `Phone_No`, `Email`, `Password`) VALUES ('$full_name','$phone','$user_email','$password')";
   $result = mysqli_query($conn , $sql);
   if($result){
     header('Location: ../login.php');

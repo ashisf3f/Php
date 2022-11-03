@@ -49,24 +49,25 @@
                         class="w-full text-white text-center py-3 rounded bg-emerald-500 text-white hover:bg-emerald-900 focus:outline-none my-1"
                     >Create Account</button>
 
+                    <div class="text-teal-100 cursor-default mt-3 text-center">
+                        Already have an account? 
+                        <a class="no-underline border-b border-blue text-blue" href="../school/login.php">
+                            Log in
+                        </a>
+                    </div>
                     <div class="text-center text-white text-sm text-grey-dark mt-4">
-                        By signing up, you agree to the ASK Update
-                        <!-- <a class="no-underline border-b border-grey-dark text-gray-dark" href="#">
-                            Terms of Service
-                        </a> and 
-                        <a class="no-underline border-b border-gray-dark text-gray-dark" href="#">
-                            Privacy Policy
-                        </a> -->
+                        By signing up, you agree to the <span class="text-bold underline">ASK UPDATE</span> 
+                       
                     </div>
                     </form>
                 </div>
 
-                <div class="text-teal-100 cursor-default mt-6">
-                    Already have an account? 
-                    <a class="no-underline border-b border-blue text-blue" href="../school/login.php">
-                        Log in
-                    </a>.
-                </div>
+                <div class="lg:mt-7 text-center text-black font-bold text-xs">
+					<span class="cursor-default">
+                Copyright © 2022
+
+                <a href="https://ashiskunwar.com.np" rel="" target="_blank" title="ASK" class="text-black underline hover:text-gray-800 ">ASK UPDATE</a></span>
+				</div>
             </div>
         </div>
 </body>
