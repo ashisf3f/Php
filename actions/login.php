@@ -17,14 +17,16 @@ if(empty($password)){
     exit();
 }
 
-$sql = "SELECT * from data_info Where Email='$email' AND Password = '$password'";
+$sql = "SELECT * from data_info Where   Email='$email' AND Password = '$password'";
+$name = strstr($email, '@', true);
 
-$result = mysqli_query($conn , $sql);
+$result = mysqli_query($conn , $sql );
 $num  = mysqli_num_rows($result);
 
 if($num == 1){
         session_start();
         $_SESSION['loggedin'] = true;
+        $_SESSION['name']= $name;
         $_SESSION['email']= $email;
         header('Location: ../welcome.php');
 }

@@ -1,19 +1,10 @@
 <?php
 session_start();
 if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
-        header('Location : login.php');
+        header('Location: login.php');
         exit();
 }
-
-
-
 ?>
-
-
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +14,28 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ASK - just the thing makes you incredible</title>
 </head>
+<style>
+    @media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: white;
+    background: black;
+  }
+}
+    html{
+        scroll-behavior: smooth;
+    }
+</style>
+
 <body>
-    <?php echo $_SESSION['email'] ?>
+    <?php 
+    // echo  $_SESSION['email']
+    require 'components/navbar.php';
+    require 'components/home.php';
+    require 'components/service.php';
+    ?>
+
 </body>
 </html>

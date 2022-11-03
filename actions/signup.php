@@ -9,9 +9,10 @@ $passwrod = $_POST['password'];
 $conf_password  = $_POST['confirm_password'];
 
 
+
 // phone no validate
 if(!is_numeric($phone)){
-    header('Location: ../signup.php?error=invalid phone-number');
+  header('Location: ../signup.php?error=invalid phone-number');
     exit();
 }
 //email_validation
@@ -25,16 +26,30 @@ if(strlen($passwrod) < 6){
     header('Location: ../signup.php?error=invalid password-length');
     exit();
 }
-// passowrd verification
-if($passwrod !== $conf_password){
-    header('Location: ../signup.php?error=password doesnot match');
-    exit();
+
+
+$existSql = "SELECT * FROM `data_info` WHERE Email = '$user_email'";
+$result = mysqli_query($conn , $existSql);
+$numExistRow = mysqli_num_rows($result);
+
+if($numExistRow > 0){
+  header('Location: ../signup.php?error=user-exist-aldready');
+  exit();
 }
 
-  $sql = "INSERT INTO `data_info`(`Full_Name`, `Phone_No`, `Email`, `Password`) VALUES ('$full_name','$phone','$user_email','$passwrod')";
 
-  if ($conn->query($sql) === TRUE) {
+else{
+  $exists = false;
+// passowrd verification
+if($passwrod == $conf_password){
+  $sql = "INSERT INTO `data_info`(`Full_Name`, `Phone_No`, `Email`, `Password`) VALUES ('$full_name','$phone','$user_email','$passwrod')";
+  $result = mysqli_query($conn , $sql);
+  if($result){
     header('Location: ../login.php');
-  } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
   }
+}
+else {
+  header('Location: ../signup.php?error=password doesnot match');
+  exit();
+}
+}
